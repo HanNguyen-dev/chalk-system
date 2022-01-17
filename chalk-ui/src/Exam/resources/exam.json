@@ -1,0 +1,42 @@
+{
+  "1": {
+    "id": "1",
+    "label": "What does RISC stand for?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Rest Interface System Computer"
+      },
+      {
+        "id": "B",
+        "label": "Row Inline Style CSS"
+      },
+      {
+        "id": "C",
+        "label": "Reduced Instruction Set Computer"
+      }
+    ],
+    "answers": [],
+    "controlType": "RADIO"
+  },
+  "2": {
+    "id": "2",
+    "label": "Who develop the x86 ISA?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Microsoft"
+      },
+      {
+        "id": "B",
+        "label": "Intel"
+      },
+      {
+        "id": "C",
+        "label": "Compaq"
+      }
+    ],
+    "answers": [],
+    "controlType": "RADIO"
+  }
+}
