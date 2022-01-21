@@ -21,6 +21,34 @@
   },
   "2": {
     "id": "2",
+    "label": "Select all examples of ISA",
+    "options": [
+      {
+        "id": "A",
+        "label": "Arm64"
+      },
+      {
+        "id": "B",
+        "label": "AMD"
+      },
+      {
+        "id": "C",
+        "label": "Compaq"
+      },
+      {
+        "id": "D",
+        "label": "MIPS"
+      },
+      {
+        "id": "E",
+        "label": "SPARC"
+      }
+    ],
+    "answers": [],
+    "controlType": "CHECKBOX"
+  },
+  "3": {
+    "id": "3",
     "label": "Who develop the x86 ISA?",
     "options": [
       {
@@ -38,5 +66,17 @@
     ],
     "answers": [],
     "controlType": "RADIO"
+  },
+  "4": {
+    "id": "4",
+    "label": "Who created the World Wide Web (WWW)?",
+    "options": [
+      {
+        "id": "A",
+        "label": ""
+      }
+    ],
+    "answers": [],
+    "controlType": "INPUT"
   }
 }

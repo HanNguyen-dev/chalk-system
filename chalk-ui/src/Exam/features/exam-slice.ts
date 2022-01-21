@@ -10,7 +10,7 @@ interface ExamState {
 
 const initialState: ExamState = {
   currQuestionIdx: 0,
-  questionsOrder: [ '1', '2' ],
+  questionsOrder: [ '1', '2', '3', '4' ],
   exam: ExamData as { [key:string]: Question }
 }
 
@@ -30,13 +30,26 @@ const examSlice = createSlice({
     answerQuestion(state, action: PayloadAction<{ questionId: string, option: string }>) {
       const question = state.exam[action.payload.questionId];
       switch (question.controlType) {
-        case CONTROL_TYPE.RADIO:
+        case CONTROL_TYPE.INPUT:
+          question.options[0].label = action.payload.option;
+          question.answers = action.payload.option ? [question.options[0].id] : [];
+          break;
+        case CONTROL_TYPE.CHECKBOX:
+          const index = question.answers.indexOf(action.payload.option);
+          index > -1 ?
+            question.answers.splice(index, 1) :
+            question.answers.push(action.payload.option);
+          break;
+        default:
           question.answers = [action.payload.option];
       }
     },
+    setCurrentQuestion(state, action: PayloadAction<number>) {
+      state.currQuestionIdx = action.payload;
+    }
   }
 
 });
 
-export const { reset, nextQuestion, answerQuestion, previousQuestion } = examSlice.actions;
+export const { reset, nextQuestion, answerQuestion, previousQuestion, setCurrentQuestion } = examSlice.actions;
 export default examSlice.reducer;
