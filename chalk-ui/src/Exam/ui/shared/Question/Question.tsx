@@ -25,8 +25,8 @@ export default function QuestionComponent(props: { question: Question, onChange:
             name="radio-buttons-group"
             onChange={handler}
           >
-            { props.question.options.map(option =>
-                <FormControlLabel key={option.id} value={option.id} control={<Radio />} label={option.label} />) }
+            { props.question.options.map((option, index) =>
+                <FormControlLabel key={index} value={index} control={<Radio />} label={option.label} />) }
           </RadioGroup>
         </FormControl>);
         break;

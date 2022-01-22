@@ -11,6 +11,11 @@ export interface Option {
   label: string;
 }
 
+export interface QuestionOption {
+  questionId: string;
+  option: string;
+}
+
 export enum CONTROL_TYPE {
   RADIO = 'RADIO',
   CHECKBOX = 'CHECKBOX',

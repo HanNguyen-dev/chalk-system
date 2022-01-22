@@ -8,12 +8,12 @@ export default function CheckboxQuestion(props: { question: Question, onChange: 
 
   return (
     <FormGroup>
-      {props.question.options.map(option => (
+      {props.question.options.map((option, index) => (
         <FormControlLabel key={option.id}
                           control={<Checkbox
-                                      checked={props.question.answers.includes(option.id)}
-                                      name={option.id}
-                                      onChange={(event) => props.onChange(event.target.name)}/>} label={option.label} />
+                                      checked={props.question.answers.includes(String(index))}
+                                      value={index}
+                                      onChange={(event) => props.onChange(event.target.value)}/>} label={option.label} />
       ))}
     </FormGroup>
   );

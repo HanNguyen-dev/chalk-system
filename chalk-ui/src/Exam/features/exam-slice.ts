@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CONTROL_TYPE, Question } from '../domain/question.model';
+import { CONTROL_TYPE, Question, QuestionOption } from '../domain/question.model';
 import * as ExamData from '../resources/exam.json';
 
 interface ExamState {
@@ -27,12 +27,12 @@ const examSlice = createSlice({
     nextQuestion(state) {
       state.currQuestionIdx++;
     },
-    answerQuestion(state, action: PayloadAction<{ questionId: string, option: string }>) {
+      answerQuestion(state, action: PayloadAction<QuestionOption>) {
       const question = state.exam[action.payload.questionId];
       switch (question.controlType) {
         case CONTROL_TYPE.INPUT:
           question.options[0].label = action.payload.option;
-          question.answers = action.payload.option ? [question.options[0].id] : [];
+          question.answers = action.payload.option ? ['0'] : [];
           break;
         case CONTROL_TYPE.CHECKBOX:
           const index = question.answers.indexOf(action.payload.option);
